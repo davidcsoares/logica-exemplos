@@ -1,0 +1,49 @@
+<canvas width="600" height="400"></canvas>
+
+<p>Escolha uma cor: </p><input type="color" name="cores" id="cor">
+<style>
+    body{
+        background-color: black;
+    }
+</style>
+
+<script>
+    var tela = document.querySelector('canvas');
+    var pincel = tela.getContext('2d');
+    var cores = document.querySelector('input');
+
+    pincel.fillStyle = 'white';
+    pincel.fillRect(0, 0, 600, 400);
+
+    var desenha = false;
+
+    var desenhaCirculo = function (evento) {
+
+        //caso o valor seja verdadeiro, a função é executada
+        if (desenha) {
+            
+            var x = evento.pageX - tela.offsetLeft;
+            var y = evento.pageY - tela.offsetTop;
+            pincel.fillStyle = cores.value;
+            pincel.beginPath();
+            pincel.arc(x, y, 10, 0, 2 * 3.14);
+            pincel.fill();
+            console.log(x + ',' + y);
+
+        }
+
+    }
+
+    //quando o mouse estiver em cima do canvas ele movimenta o desenho
+    tela.onmousemove = desenhaCirculo;
+
+    //botao esquerdo do mouse pressionado habilita o desenho
+    tela.onmousedown = function () {
+        desenha = true;
+    }
+    //botao esquerdo do mouse solto desabilita o desenho
+    tela.onmouseup = function () {
+        desenha = false;
+    }
+
+</script>

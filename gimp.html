@@ -1,0 +1,34 @@
+<canvas width="800" height="600"></canvas>
+
+    <script>
+        
+        function triangulo() {
+            
+            pincel.fillStyle = 'orange';
+            pincel.beginPath();
+            pincel.moveTo(300,130);
+            pincel.lineTo(200,300);
+            pincel.lineTo(400,300);
+            pincel.fill();
+
+        }
+
+        var tela  = document.querySelector('canvas');
+
+        var pincel = tela.getContext('2d');
+
+        //a cor vem antes do pincel !!!
+        pincel.fillStyle = 'lightgrey';
+        pincel.fillRect(0,0,600,400);
+
+        pincel.fillStyle = 'blue';
+        pincel.fillRect(0,0,200,400);
+
+        pincel.fillStyle = 'red';
+        pincel.fillRect(400,0,200,400);
+
+        pincel.fillStyle = 'white';
+        pincel.fillRect(200,0,200,400);
+        
+        triangulo();
+    </script>

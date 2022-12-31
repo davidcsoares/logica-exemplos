@@ -1,0 +1,55 @@
+// O código alterado para pular duas linhas fica da seguinte maneira:
+
+    <code>
+
+        <meta charset="UTF-8">
+        <script>
+        
+        function pulaLinha() {
+            // pulando duas linhas
+            document.write("<br><br>");
+        }
+        
+        function mostra(frase) {
+            document.write(frase);
+            pulaLinha();
+        }
+        </script>
+
+    </code>
+
+// Agora, vamos colocar um <hr> entre os dois <br>s:
+
+    <code>
+        <meta charset="UTF-8">
+        <script>
+
+        function pulaLinha() {
+            // pulando duas linhas
+            document.write("<br><hr><br>");
+        }
+
+        function mostra(frase) {
+            document.write(frase);
+            pulaLinha();
+        }
+        </script>
+    </code>
+
+// No mostra colocamos todo o conteúdo passado para document.write entre a tag big:
+
+    <code>
+        <meta charset="UTF-8">
+        <script>
+
+        function pulaLinha() {
+            // pulando duas linhas
+            document.write("<br><hr><br>");
+        }
+
+        function mostra(frase) {
+            document.write("<big>" + frase + "</big>");
+            pulaLinha();
+        }
+        </script>
+</code>

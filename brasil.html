@@ -1,0 +1,21 @@
+<canvas width="600" height="400"></canvas>
+
+<script>
+
+     var canvas = document.querySelector('canvas');
+     var pen = canvas.getContext('2d');
+
+    pen.fillStyle = 'green';
+    pen.fillRect(0,0,500,300);
+    pen.fill();
+
+    pen.fillStyle = 'yellow';
+    pen.beginPath();
+    pen.moveTo(250,150);
+    pen.lineTo(250,150);
+    pen.lineTo(450,50);
+    
+    pen.moveTo(450,150);
+    pen.fill();
+    
+</script>

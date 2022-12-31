@@ -1,0 +1,51 @@
+<h1>Crie seu triângulo 📐 </h1>
+<canvas width="600" height="400" style="background-color: gray;"></canvas>
+
+    <input type="text" id="xa">
+    <input type="text" id="ya">
+    <input type="text" id="xc">
+    <input type="text" id="yc">
+    <input type="text" id="cor">
+    <button>Gerar triangulo</button>
+
+    <script>
+        
+        var tela = document.querySelector('canvas');
+        var pincel = tela.getContext('2d');
+
+        var inputs = document.querySelectorAll('input');
+
+        var posicaoXa = inputs[0];
+        var posicaoYa = inputs[1];
+        var posicaoXc = inputs[2];
+        var posicaoYc = inputs[3];
+        var corTriangulo = inputs[4];
+        var gerarT = document.querySelector('button');
+
+        function triangulo(xa,ya,xc,yc,cor) {
+            
+            xa = posicaoXa.value;
+            ya = posicaoYa.value;
+            xc = posicaoXc.value;
+            yc = posicaoYc.value;
+            cor = corTriangulo.value;
+
+            pincel.fillStyle=cor;
+            pincel.beginPath();
+            pincel.moveTo(xa, ya);
+            pincel.lineTo(xa, yc);
+            pincel.lineTo(xc, yc);
+            pincel.fill();
+
+            pincel.fillStyle="white";
+            pincel.beginPath();
+            pincel.moveTo(100, 175);
+            pincel.lineTo(100, 350);
+            pincel.lineTo(275, 350);
+            pincel.fill();
+
+        }
+
+        gerarT.onclick = triangulo;
+
+    </script>

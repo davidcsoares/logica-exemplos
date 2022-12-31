@@ -1,0 +1,36 @@
+<canvas width="600" height="400" style="background-color: gray ;"></canvas>
+
+<script>
+
+    /*
+
+    Creeper: 
+    
+    Retângulo 1: 350, 300 (cabeça).
+    Retângulos 2 e 3: 90, 90 (olhos).
+    Retângulo 4: 70, 100 (nariz).
+    Retângulos 5 e 6: 40, 110 (parte da boca).
+    O seu canvas deve ter o tamanho de 600 x 400 pixels.
+    
+    */
+
+    var canvas = document.querySelector('canvas');
+    var pen = canvas.getContext('2d');
+
+    pen.fillStyle = 'darkgreen';
+    pen.fillRect(110,50,350,300);
+    pen.fill();
+
+    //Não precisa colocar fill() no final de cada grupo de blocos, 
+    //só no final do mesmo conjunto da cor...
+    pen.fillStyle = 'black';
+    pen.fillRect(160,120,90,90);
+    pen.fillRect(320,120,90,90);
+
+    pen.fillRect(250,210,70,100);
+
+    pen.fillRect(210,240,40,110);
+    pen.fillRect(310,240,40,110);
+    pen.fill();
+
+</script>

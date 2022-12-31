@@ -1,0 +1,72 @@
+<canvas width="600" height="400" style="background-color: #f3d8b2;"></canvas>
+
+    <script>
+        
+        var canvas = document.querySelector('canvas');
+        var pen = canvas.getContext('2d');
+        var cores = ['#00a9ed','#ff9c9a','#f9e34d'];
+        var indiceCores = 0;
+        var raio = 10;
+
+        pen.fillStyle = 'darkgreen';
+        pen.beginPath();
+        pen.fillRect(10,10,580,380);
+        pen.fill();
+
+        function desenhaCirculo(evento) {
+            
+            var x = evento.pageX - canvas.offsetLeft;
+            var y = evento.pageY - canvas.offsetTop;
+
+            //caso a tecla SHIFT esteja pressionada irá mudar o valor de raio
+            if (evento.shiftKey && evento.ctrlKey) {
+                alert('Solte as teclas !');
+
+            //enquanto o raio for menor ou igual a 40
+            } else if (evento.shiftKey && raio <= 40){
+
+                raio = raio + 10;
+            
+            //enquanto o raio for maio ou igual a 10
+            } else if (evento.ctrlKey && raio - 5 >= 10 ){
+                raio = raio - 5;
+            }
+            
+            pen.fillStyle = cores[indiceCores];
+            pen.beginPath();
+            pen.arc(x,y,raio,0,2*Math.PI);
+            pen.fill();
+
+
+        }
+
+        canvas.onclick = desenhaCirculo;
+
+        function mudaCor() {
+
+            /*
+            Aqui quando for feito o click direito vai aumentar o valor de indiceCores
+            que vai mudar a posição do array
+            */
+            indiceCores++;
+
+            /*
+            Caso o indice seja maior que a quantidade de elementos do array
+            ele retorna o indiceCores para o valor 0. 
+            */
+            if(indiceCores >= cores.length){
+                
+                indiceCores = 0;   
+
+            }
+
+            /*
+            O false é para não ser exibido o menu de contexto quando clickar no 
+            botao direito do mouse.
+            */
+                return false;
+        }
+
+        canvas.oncontextmenu = mudaCor;
+
+    </script>

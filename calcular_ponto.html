@@ -1,0 +1,62 @@
+<meta charset="UTF-8">
+
+    <h1>Cartão amarelo</h1>
+
+    <style>
+
+        body{
+            background-color: green;
+            text-align: center;
+            margin-top: 10%;
+        }
+
+        h1 {
+            color: yellow;
+        }
+
+        p {
+            color: aliceblue;
+        }
+
+        hr {
+            color: aliceblue;
+        }
+
+        br {
+            color: aliceblue;
+        }
+
+
+    </style>
+    <script>
+
+        function pulaLinha() {
+        document.write("<br><hr><br>");
+        }
+
+        function escreva(texto) {
+            document.write("<p><big>"+texto+"</big></p>");
+            pulaLinha();
+        }
+
+        function descubraPontos(vitorias,empate) {
+             return vitorias * 3 + empate;
+        }
+
+        var nomeTime = prompt("Qual o nome do time?");
+        var vitorias = parseInt(prompt("Informe o numero de vitorias do "+nomeTime));
+        var empates = parseInt(prompt("Informe o numero de empates do "+nomeTime));
+        var resultado = descubraPontos(vitorias, empates);
+        var pontuacaoAntiga = 28;
+        
+        if (resultado > pontuacaoAntiga) {
+            escreva("A pontuação do "+nomeTime+" é maior que do ano passado");
+        } else if (resultado < pontuacaoAntiga) {
+            escreva("A pontuação do "+nomeTime+" é menor que do ano passado");
+        } else {
+            escreva("A pontuação do "+nomeTime+" é igual que do ano passado");
+        }
+        
+
+
+    </script>

@@ -1,0 +1,30 @@
+<meta charset="UTF-8">
+
+<script>
+    function pulaLinha() {
+        document.write("<br><hr><br>");
+    }
+
+
+    function escreva(texto) {
+        document.write("<p><big>"+texto+"</big></p>");
+        pulaLinha();
+    }
+
+    var numeroInicial = parseInt(prompt("Qual o número inicial?"));
+    var numeroFinal = parseInt(prompt("Qual o número final?"));
+    
+    var i = numeroInicial;
+
+    while (i <= numeroFinal) {
+        
+        if (i % 2 == 0) {
+            escreva(i);
+        }
+        /*nunca se esqueça de que o contador deve estar dentro do while e não dentro de 
+        if, pois entrará em loop e não mostrará os numeros na página.
+        */
+        i++;
+    }
+
+</script>

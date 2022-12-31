@@ -1,0 +1,86 @@
+<meta charset="UTF-8">
+
+<h1>Calcular IMC</h1>
+
+    <div>
+
+        <label for="nome">Qual o seu nome?:</label>
+        <input type="text" id="nome"/>
+    
+        <label for="peso">Peso:</label>
+        <input type="text" id="valorPeso"/>
+    
+        <label for="altura">Altura:</label>
+        <input type="text" id="valorAltura"/>
+    
+        <button>Calcular</button>
+
+    </div>
+
+    <style>
+
+        body{
+            background-color: aquamarine;
+        }
+
+        h1{
+            text-align: center;
+            font-family: Arial, Helvetica, sans-serif;
+            margin-top: 10%;
+        }
+
+        p {
+            text-align: center;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        
+    </style>
+
+    <script>
+    
+        function pulaLinha() {
+            document.write("<br><hr><br>");
+        }
+
+
+        function escreva(texto) {
+            document.write("<p><big>"+texto+"</big></p>");
+            pulaLinha();
+        }
+        
+        function calculaImc(peso,altura) {
+            
+            peso = valorPeso.value;
+            altura = valorAltura.value;     
+            return peso / (altura * altura);
+
+        }
+
+        var imc = calculaImc(valorPeso,valorAltura);
+
+            if (imc < 18.5) {
+                escreva("Magreza");
+            } else if (imc >= 18.5 && imc < 25) {
+                escreva("Normal");
+            } else if (imc >= 25 && imc < 30) {
+                escreva("Sobrepeso");
+            } else if(imc >= 30 && imc < 35){
+                escreva("Obesidade grau I")
+            } else if (imc >= 35 && imc < 40){
+                escreva("Obesidade grau II");
+            } else if (imc >= 40){
+                escreva("Obesidade grau III");
+            } else {
+                escreva("Não encontrado...");
+            }
+
+
+        var nome = document.querySelector('#nome');
+        var valorPeso = document.querySelector('#valorPeso');
+        var valorAltura = document.querySelector('#valorAltura');
+        var botao = document.querySelector('button');
+
+        nome.focus();
+        botao.onclick = calculaImc;
+
+</script>
